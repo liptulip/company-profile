@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,8 @@
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -43,55 +45,68 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
         /* Glassmorphism & Custom Gradients */
         .glass-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
         }
+
         .dark .glass-card {
             background: rgba(30, 41, 59, 0.65);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 50%, #a855f7 100%);
-            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .dark .gradient-text {
             background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #c084fc 100%);
-            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .blob-bg {
             filter: blur(80px);
             opacity: 0.35;
         }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #0f172a;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #4f46e5;
             border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 selection:bg-brand-500 selection:text-white overflow-x-hidden">
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 selection:bg-brand-500 selection:text-white overflow-x-hidden">
 
     <!-- Toast Notification Box (No Alert) -->
-    <div id="toastBox" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none max-w-sm w-full">
-        <div class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-4 rounded-2xl shadow-2xl border border-slate-700 dark:border-slate-200 flex items-start gap-3">
+    <div id="toastBox"
+        class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none max-w-sm w-full">
+        <div
+            class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-4 rounded-2xl shadow-2xl border border-slate-700 dark:border-slate-200 flex items-start gap-3">
             <div class="p-1.5 bg-emerald-500/20 text-emerald-400 dark:text-emerald-600 rounded-lg shrink-0 mt-0.5">
                 <i data-lucide="check-circle-2" class="w-5 h-5"></i>
             </div>
             <div class="flex-1">
                 <h4 id="toastTitle" class="font-bold text-sm">Berhasil Disalin!</h4>
-                <p id="toastMessage" class="text-xs text-slate-300 dark:text-slate-600 mt-0.5 leading-relaxed">Rincian anggaran sudah disalin ke clipboard. Siap ditempel ke grup WA atau proposal!</p>
+                <p id="toastMessage" class="text-xs text-slate-300 dark:text-slate-600 mt-0.5 leading-relaxed">Rincian
+                    anggaran sudah disalin ke clipboard. Siap ditempel ke grup WA atau Harga!</p>
             </div>
         </div>
     </div>
@@ -108,90 +123,123 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
                     <i data-lucide="code-2" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <span class="font-extrabold text-xl tracking-tight">Karsa<span class="text-brand-600 dark:text-brand-400">Web</span></span>
-                    <span class="block text-[10px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 -mt-1">Student Org Studio</span>
+                    <span class="font-extrabold text-xl tracking-tight">Karsa<span
+                            class="text-brand-600 dark:text-brand-400">Web</span></span>
+                    <span
+                        class="block text-[10px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 -mt-1">Student
+                        Org Studio</span>
                 </div>
             </a>
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300">
                 <a href="#solusi" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Solusi</a>
-                <a href="#preview" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Demo Fitur</a>
-                <a href="#paket" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Paket Harga</a>
+                <!-- <a href="#preview" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Demo
+                    Fitur</a> -->
+                <a href="#paket" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Paket
+                    Harga</a>
                 <a href="#addons" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Add-Ons</a>
-                <a href="#kalkulator" class="text-brand-600 dark:text-brand-400 flex items-center gap-1.5 bg-brand-50 dark:bg-brand-950/60 px-3 py-1.5 rounded-full border border-brand-200 dark:border-brand-800">
+                <a href="#kalkulator"
+                    class="text-brand-600 dark:text-brand-400 flex items-center gap-1.5 bg-brand-50 dark:bg-brand-950/60 px-3 py-1.5 rounded-full border border-brand-200 dark:border-brand-800">
                     <i data-lucide="calculator" class="w-4 h-4"></i>
-                    Simulasi Proposal
+                    Simulasi Harga
                 </a>
-                <a href="#ketentuan" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Alur & T&C</a>
+                <a href="#ketentuan" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Alur &
+                    T&C</a>
             </nav>
 
             <!-- Actions: Theme Toggle & CTA -->
             <div class="flex items-center gap-3">
-                <button id="themeToggle" aria-label="Ganti Tema" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">
+                <button id="themeToggle" aria-label="Ganti Tema"
+                    class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">
                     <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
                     <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-slate-700"></i>
                 </button>
-                <a href="#kalkulator" class="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-600/25 hover:shadow-brand-600/40 transition-all active:scale-95">
+                <a href="#kalkulator"
+                    class="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-600/25 hover:shadow-brand-600/40 transition-all active:scale-95">
                     <span>Konsultasi Gratis</span>
                     <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                 </a>
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+                <button id="mobileMenuBtn"
+                    class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
                     <i data-lucide="menu" class="w-5 h-5"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-6 space-y-2">
-            <a href="#solusi" class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Solusi Organisasi</a>
-            <a href="#preview" class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Demo Interaktif</a>
-            <a href="#paket" class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Paket Harga</a>
-            <a href="#addons" class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Daftar Add-Ons</a>
-            <a href="#kalkulator" class="block px-3 py-2 rounded-lg font-bold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50">Kalkulator Proposal</a>
-            <a href="#ketentuan" class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Alur Kerja & Ketentuan</a>
+        <div id="mobileMenu"
+            class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-6 space-y-2">
+            <a href="#solusi"
+                class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Solusi
+                Organisasi</a>
+            <a href="#preview"
+                class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Demo
+                Interaktif</a>
+            <a href="#paket"
+                class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Paket
+                Harga</a>
+            <a href="#addons"
+                class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Daftar
+                Add-Ons</a>
+            <a href="#kalkulator"
+                class="block px-3 py-2 rounded-lg font-bold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50">Kalkulator
+                Harga</a>
+            <a href="#ketentuan"
+                class="block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Alur Kerja &
+                Ketentuan</a>
         </div>
     </header>
 
     <!-- 2. HERO SECTION -->
-    <section class="relative pt-14 pb-20 lg:pt-24 lg:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section class="relative pt-7 pb-24 lg:pt-14 lg:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center max-w-4xl mx-auto">
             <!-- Top Pill Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 dark:bg-brand-400/10 border border-brand-500/20 text-brand-600 dark:text-brand-300 text-xs sm:text-sm font-bold mb-6">
+            <!-- <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 dark:bg-brand-400/10 border border-brand-500/20 text-brand-600 dark:text-brand-300 text-xs sm:text-sm font-bold mb-6">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                 <span>Partner Digital #1 untuk OSIS, MPK & Ekskul SMA/SMK</span>
-            </div>
+            </div> -->
 
             <!-- Main Headline -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] mb-6">
-                Bikin Organisasi & Ekskul Sekolahmu Makin Berkelas dengan <span class="gradient-text">Website Resmi</span>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.15] mb-6">
+                Bikin Organisasi & Ekskul Sekolahmu Makin Berkelas dengan <span class="gradient-text">Website
+                    Resmi</span>
             </h1>
 
             <!-- Subheadline -->
-            <p class="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
-                Tinggalkan cara lama yang ribet. Pamerkan portofolio proker kabinet, buka pendaftaran anggota baru (*Open Recruitment*), hingga tampung suara siswa lewat **Kotak Aspirasi Digital** dengan harga yang ramah uang kas pelajar & mudah disetujui Pembina.
+            <p
+                class="text-base sm:text-md lg:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
+                Tinggalkan cara lama yang ribet. Pamerkan portofolio proker kabinet, buka pendaftaran anggota baru
+                <span class="font-bold">( Open Recruitment )</span>, hingga tampung suara siswa lewat <span
+                    class="font-bold">Kotak Aspirasi Digital</span> dengan harga yang
+                ramah uang kas pelajar & mudah disetujui Pembina.
             </p>
 
             <!-- Hero CTAs -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-                <a href="#paket" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-brand-600/30 hover:-translate-y-0.5 transition-all">
+                <a href="#paket"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-brand-600/30 hover:-translate-y-0.5 transition-all">
                     <span>Lihat Paket mulai Rp459rb</span>
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
-                <a href="#kalkulator" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 glass-card border border-slate-300 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-400 font-bold px-8 py-4 rounded-2xl transition-all">
+                <a href="#kalkulator"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 glass-card border border-slate-300 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-400 font-bold px-8 py-4 rounded-2xl transition-all">
                     <i data-lucide="file-spreadsheet" class="w-5 h-5 text-brand-500"></i>
-                    <span>Hitung Estimasi Proposal</span>
+                    <span>Hitung Estimasi Harga</span>
                 </a>
             </div>
 
             <!-- Trust Badges Grid -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
-                <div class="glass-card p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 text-left">
+                <div
+                    class="glass-card p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 text-left">
                     <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 shrink-0">
                         <i data-lucide="wallet" class="w-5 h-5"></i>
                     </div>
@@ -200,7 +248,8 @@
                         <p class="text-[11px] text-slate-500 dark:text-slate-400">Hemat s/d 55% harga pasar</p>
                     </div>
                 </div>
-                <div class="glass-card p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 text-left">
+                <div
+                    class="glass-card p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 text-left">
                     <div class="p-2.5 rounded-xl bg-sky-500/10 text-sky-500 shrink-0">
                         <i data-lucide="globe" class="w-5 h-5"></i>
                     </div>
@@ -209,7 +258,8 @@
                         <p class="text-[11px] text-slate-500 dark:text-slate-400">Aktif penuh 1 tahun pertama</p>
                     </div>
                 </div>
-                <div class="glass-card p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 text-left">
+                <div
+                    class="glass-card p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 text-left">
                     <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-500 shrink-0">
                         <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </div>
@@ -218,7 +268,8 @@
                         <p class="text-[11px] text-slate-500 dark:text-slate-400">Database PostgreSQL aman</p>
                     </div>
                 </div>
-                <div class="glass-card p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 text-left">
+                <div
+                    class="glass-card p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 text-left">
                     <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-500 shrink-0">
                         <i data-lucide="smartphone" class="w-5 h-5"></i>
                     </div>
@@ -234,139 +285,183 @@
     <!-- 3. SOLUSI UNTUK OSIS, MPK, & EKSKUL -->
     <section id="solusi" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Dibuat Khusus Untuk Sekolah</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-4">Kenapa Organisasi Kalian Butuh Website Sendiri?</h2>
-            <p class="text-slate-600 dark:text-slate-400">Bukan sekadar gaya-gayaan, website resmi jadi warisan digital (*legacy*) angkatan kalian yang mempermudah kerja pengurus setiap hari.</p>
+            <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Dibuat Khusus
+                Untuk Sekolah</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-4">Kenapa Organisasi Kalian Butuh Website Sendiri?
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400">Bukan sekadar gaya-gayaan, website resmi jadi warisan digital
+                (*legacy*) angkatan kalian yang mempermudah kerja pengurus setiap hari.</p>
         </div>
 
-        <!-- Segment Cards -->
         <div class="grid md:grid-cols-3 gap-6">
-            <!-- Card 1: Ekskul -->
-            <div class="glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition-all group flex flex-col justify-between">
+            <div
+                class="glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition-all group flex flex-col justify-between">
                 <div>
-                    <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="trophy" class="w-7 h-7"></i>
                     </div>
-                    <div class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-600 dark:text-sky-400 mb-3">
+                    <div
+                        class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-600 dark:text-sky-400 mb-3">
                         Ekstrakurikuler & Klub
                     </div>
                     <h3 class="text-xl font-extrabold mb-3">Magnet Anggota Baru Saat Demo Ekskul / MPLS</h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        Buat adik kelas terpukau dengan halaman profil ekskul yang memajang deretan piala prestasi, pengenalan divisi, dokumentasi latihan, dan pendaftaran anggota baru terintegrasi.
+                        Buat adik kelas terpukau dengan halaman profil ekskul yang memajang deretan piala prestasi,
+                        pengenalan divisi, dokumentasi latihan, dan pendaftaran anggota baru terintegrasi.
                     </p>
                 </div>
-                <ul class="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-5">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-500"></i> Etalase Prestasi & Galeri Kegiatan</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-500"></i> Form Open Recruitment langsung ke Sheets</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-500"></i> Cocok dengan <strong>Paket Web Statis (Rp459k)</strong></li>
+                <ul
+                    class="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-5">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-500"></i> Etalase
+                        Prestasi & Galeri Kegiatan</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-500"></i> Form
+                        Open Recruitment langsung ke Sheets</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-500"></i> Cocok
+                        dengan <strong>Paket Web Statis (Rp459k)</strong></li>
                 </ul>
             </div>
 
-            <!-- Card 2: OSIS -->
-            <div class="glass-card rounded-3xl p-7 border-2 border-brand-500/60 dark:border-brand-500/50 shadow-xl shadow-brand-500/10 transition-all group flex flex-col justify-between relative">
-                <span class="absolute -top-3.5 right-6 bg-brand-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow">Paling Banyak Dicari</span>
+            <div
+                class="glass-card rounded-3xl p-7 border-2 border-brand-500/60 dark:border-brand-500/50 shadow-xl shadow-brand-500/10 transition-all group flex flex-col justify-between relative">
+                <span
+                    class="absolute -top-3.5 right-6 bg-brand-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow">Paling
+                    Rekomendasi
+                </span>
                 <div>
-                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="layout-Grid" class="w-7 h-7"></i>
                     </div>
-                    <div class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 mb-3">
+                    <div
+                        class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 mb-3">
                         Pengurus OSIS
                     </div>
                     <h3 class="text-xl font-extrabold mb-3">Pusat Informasi Proker & Portal Berita Siswa</h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        Kelola publikasi sekolah tanpa harus ngerti koding. Seksi Humas atau BPH bisa login ke Dashboard Admin untuk upload berita acara pensi, lomba classmeeting, dan update struktur kabinet.
+                        Kelola publikasi sekolah tanpa harus ngerti koding. Seksi Humas atau BPH bisa login ke Dashboard
+                        Admin untuk upload berita acara pensi, lomba classmeeting, dan update struktur kabinet.
                     </p>
                 </div>
-                <ul class="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-5">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> CMS Dashboard Admin Mudah Dipakai</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Update Struktur Kabinet Tiap Periode</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Cocok dengan <strong>Paket Web Dinamis (Rp899k)</strong></li>
+                <ul
+                    class="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-5">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> CMS
+                        Dashboard Admin Mudah Dipakai</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
+                        Update Struktur Kabinet Tiap Periode</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Cocok
+                        dengan <strong>Paket Web Dinamis (Rp899k)</strong></li>
                 </ul>
             </div>
 
-            <!-- Card 3: MPK -->
-            <div class="glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 transition-all group flex flex-col justify-between">
+            <div
+                class="glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 transition-all group flex flex-col justify-between">
                 <div>
-                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="message-square-heart" class="w-7 h-7"></i>
                     </div>
-                    <div class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-purple-600 dark:text-purple-400 mb-3">
+                    <div
+                        class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-purple-600 dark:text-purple-400 mb-3">
                         MPK (Majelis Perwakilan Kelas)
                     </div>
                     <h3 class="text-xl font-extrabold mb-3">Kotak Aspirasi Digital Modern & Transparan</h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        Gantikan Google Form yang membosankan dengan sistem Suara Siswa. Siswa bisa mengirim kritik & saran secara <strong>Anonim</strong> atau <strong>Terbuka</strong>, lengkap dengan status tindak lanjut dari MPK.
+                        Gantikan Google Form yang membosankan dengan sistem Suara Siswa. Siswa bisa mengirim kritik &
+                        saran secara <strong>Anonim</strong> atau <strong>Terbuka</strong>, lengkap dengan status tindak
+                        lanjut dari MPK.
                     </p>
                 </div>
-                <ul class="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-5">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Mode Kirim Anonim / Identitas Terbuka</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Filter Aspirasi & Balasan Publik di Web</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Add-On Spesial <strong>Suara MPK (+Rp100k)</strong></li>
+                <ul
+                    class="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-5">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Mode
+                        Kirim Anonim / Identitas Terbuka</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i>
+                        Filter Aspirasi & Balasan Publik di Web</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i>
+                        Add-On Spesial <strong>Suara MPK (+Rp100k)</strong></li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- 4. PREVIEW MOCKUP INTERAKTIF -->
-    <section id="preview" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- <section id="preview" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-2xl">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
                 <div>
-                    <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Simulasi Tampilan Produk</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-1">Intip Bedanya Web Statis, Dashboard CMS, & Kotak Aspirasi</h2>
+                    <span
+                        class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Simulasi
+                        Tampilan Produk</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-1">Intip Bedanya Web Statis, Dashboard CMS, &
+                        Kotak Aspirasi</h2>
                 </div>
-                <!-- Tab Buttons -->
                 <div class="flex flex-wrap gap-2 bg-slate-200/70 dark:bg-slate-900 p-1.5 rounded-2xl">
-                    <button onclick="switchMockup('statis')" id="tab-statis" class="mockup-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow transition-all">
+                    <button onclick="switchMockup('statis')" id="tab-statis"
+                        class="mockup-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow transition-all">
                         1. Landing Page Statis
                     </button>
-                    <button onclick="switchMockup('dinamis')" id="tab-dinamis" class="mockup-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+                    <button onclick="switchMockup('dinamis')" id="tab-dinamis"
+                        class="mockup-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
                         2. Dashboard Admin (Dinamis)
                     </button>
-                    <button onclick="switchMockup('aspirasi')" id="tab-aspirasi" class="mockup-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+                    <button onclick="switchMockup('aspirasi')" id="tab-aspirasi"
+                        class="mockup-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
                         3. Kotak Aspirasi MPK
                     </button>
                 </div>
             </div>
 
-            <!-- Browser Frame Mockup -->
-            <div class="rounded-2xl overflow-hidden border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-inner">
-                <!-- Browser Top Bar -->
-                <div class="bg-slate-100 dark:bg-slate-800/90 px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between gap-4">
+            <div
+                class="rounded-2xl overflow-hidden border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-inner">
+                <div
+                    class="bg-slate-100 dark:bg-slate-800/90 px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between gap-4">
                     <div class="flex items-center gap-2">
                         <span class="w-3 h-3 rounded-full bg-rose-500"></span>
                         <span class="w-3 h-3 rounded-full bg-amber-500"></span>
                         <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
                     </div>
-                    <div id="mockupUrl" class="flex-1 max-w-md bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 font-mono truncate">
+                    <div id="mockupUrl"
+                        class="flex-1 max-w-md bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 font-mono truncate">
                         <i data-lucide="lock" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
                         <span>https://rohis-sman1.my.id</span>
                     </div>
-                    <span id="mockupBadge" class="text-[11px] font-bold px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-500">Paket Statis (Rp459k)</span>
+                    <span id="mockupBadge"
+                        class="text-[11px] font-bold px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-500">Paket Statis
+                        (Rp459k)</span>
                 </div>
 
-                <!-- View 1: Web Statis Mockup -->
                 <div id="view-statis" class="p-6 sm:p-8 space-y-6">
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-sky-500/10 via-brand-500/10 to-purple-500/10 p-6 rounded-2xl border border-brand-500/20">
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-sky-500/10 via-brand-500/10 to-purple-500/10 p-6 rounded-2xl border border-brand-500/20">
                         <div class="space-y-3 max-w-lg">
-                            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-600 text-white">Ekstrakurikuler Fotografi & Sinematografi</span>
+                            <span
+                                class="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-600 text-white">Ekstrakurikuler
+                                Fotografi & Sinematografi</span>
                             <h3 class="text-2xl font-extrabold">LENSA SMANSA — Tangkap Momen, Ciptakan Karya.</h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Wadah kreatif siswa SMAN 1 dalam bidang fotografi jurnalistik, short movie, dan desain media sejak 2016.</p>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Wadah kreatif siswa SMAN 1
+                                dalam bidang fotografi jurnalistik, short movie, dan desain media sejak 2016.</p>
                             <div class="flex gap-3 pt-1">
-                                <span class="px-4 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold">Daftar Anggota Baru</span>
-                                <span class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-xs font-bold">Galeri Karya</span>
+                                <span class="px-4 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold">Daftar
+                                    Anggota Baru</span>
+                                <span
+                                    class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-xs font-bold">Galeri
+                                    Karya</span>
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-3 w-full md:w-72 shrink-0">
-                            <div class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+                            <div
+                                class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
                                 <p class="text-xl font-extrabold text-brand-500">45+</p>
                                 <p class="text-[11px] text-slate-500">Anggota Aktif</p>
                             </div>
-                            <div class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+                            <div
+                                class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
                                 <p class="text-xl font-extrabold text-emerald-500">12 Piala</p>
                                 <p class="text-[11px] text-slate-500">Juara FLS2N & Kota</p>
                             </div>
-                            <div class="col-span-2 bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs">
+                            <div
+                                class="col-span-2 bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs">
                                 <span class="font-semibold">3 Halaman Responsif</span>
                                 <span class="text-emerald-500 font-bold">Beranda • Divisi • Galeri</span>
                             </div>
@@ -374,88 +469,114 @@
                     </div>
                 </div>
 
-                <!-- View 2: Dashboard Dinamis Mockup -->
                 <div id="view-dinamis" class="hidden p-6 sm:p-8">
                     <div class="grid md:grid-cols-4 gap-6">
-                        <!-- Sidebar Mockup -->
-                        <div class="bg-slate-100 dark:bg-slate-800/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-700/70 space-y-2">
+                        <div
+                            class="bg-slate-100 dark:bg-slate-800/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-700/70 space-y-2">
                             <div class="pb-3 mb-2 border-b border-slate-200 dark:border-slate-700">
                                 <p class="text-xs font-bold text-brand-500">CMS ADMIN OSIS</p>
                                 <p class="text-[11px] text-slate-500">Kabinet Cakra Adhigana</p>
                             </div>
-                            <div class="px-3 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold flex items-center gap-2">
+                            <div
+                                class="px-3 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold flex items-center gap-2">
                                 <i data-lucide="newspaper" class="w-4 h-4"></i> Berita & Proker
                             </div>
-                            <div class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-400 text-xs font-semibold flex items-center gap-2">
+                            <div
+                                class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-400 text-xs font-semibold flex items-center gap-2">
                                 <i data-lucide="users" class="w-4 h-4"></i> Struktur Pengurus
                             </div>
-                            <div class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-400 text-xs font-semibold flex items-center gap-2">
+                            <div
+                                class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-400 text-xs font-semibold flex items-center gap-2">
                                 <i data-lucide="inbox" class="w-4 h-4"></i> Aspirasi Masuk (14)
                             </div>
                             <div class="pt-4">
-                                <span class="block text-[10px] text-emerald-500 font-mono bg-emerald-500/10 px-2.5 py-1.5 rounded-lg border border-emerald-500/20">
+                                <span
+                                    class="block text-[10px] text-emerald-500 font-mono bg-emerald-500/10 px-2.5 py-1.5 rounded-lg border border-emerald-500/20">
                                     ● Supabase RLS: Protected
                                 </span>
                             </div>
                         </div>
-                        <!-- Main Panel Mockup -->
                         <div class="md:col-span-3 space-y-4">
                             <div class="flex flex-wrap items-center justify-between gap-2">
                                 <h4 class="font-extrabold text-base">Manajemen Artikel & Program Kerja</h4>
-                                <span class="px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold flex items-center gap-1.5">
+                                <span
+                                    class="px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold flex items-center gap-1.5">
                                     <i data-lucide="plus" class="w-3.5 h-3.5"></i> Tambah Berita Baru
                                 </span>
                             </div>
                             <div class="space-y-2.5">
-                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 flex items-center justify-between gap-4">
+                                <div
+                                    class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 flex items-center justify-between gap-4">
                                     <div>
-                                        <p class="font-bold text-xs sm:text-sm">Pendaftaran Classmeeting Semester Ganjil Resmi Dibuka!</p>
-                                        <p class="text-[11px] text-slate-500">Diposting oleh Sekbid Olahraga • 2 jam lalu</p>
+                                        <p class="font-bold text-xs sm:text-sm">Pendaftaran Classmeeting Semester Ganjil
+                                            Resmi Dibuka!</p>
+                                        <p class="text-[11px] text-slate-500">Diposting oleh Sekbid Olahraga • 2 jam
+                                            lalu</p>
                                     </div>
-                                    <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-500">Published</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-500">Published</span>
                                 </div>
-                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 flex items-center justify-between gap-4">
+                                <div
+                                    class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 flex items-center justify-between gap-4">
                                     <div>
-                                        <p class="font-bold text-xs sm:text-sm">Laporan Pertanggungjawaban (LPJ) Bakti Sosial OSIS</p>
-                                        <p class="text-[11px] text-slate-500">Diposting oleh BPH Sekretaris • Kemarin</p>
+                                        <p class="font-bold text-xs sm:text-sm">Laporan Pertanggungjawaban (LPJ) Bakti
+                                            Sosial OSIS</p>
+                                        <p class="text-[11px] text-slate-500">Diposting oleh BPH Sekretaris • Kemarin
+                                        </p>
                                     </div>
-                                    <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-500">Published</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-500">Published</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- View 3: Kotak Aspirasi Mockup -->
                 <div id="view-aspirasi" class="hidden p-6 sm:p-8">
                     <div class="grid md:grid-cols-2 gap-6 items-center">
-                        <div class="space-y-4 bg-slate-50 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <div
+                            class="space-y-4 bg-slate-50 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-extrabold uppercase tracking-wider text-purple-500">Form Suara Siswa MPK</span>
-                                <span class="text-[11px] bg-purple-500/10 text-purple-400 px-2.5 py-0.5 rounded-full font-semibold">Anti-Spam Aktif</span>
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-purple-500">Form Suara
+                                    Siswa MPK</span>
+                                <span
+                                    class="text-[11px] bg-purple-500/10 text-purple-400 px-2.5 py-0.5 rounded-full font-semibold">Anti-Spam
+                                    Aktif</span>
                             </div>
                             <div class="flex gap-2 text-xs">
-                                <span class="flex-1 py-2 text-center rounded-xl bg-purple-600 text-white font-bold">Mode Anonim (Rahasia)</span>
-                                <span class="flex-1 py-2 text-center rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-500 font-semibold">Identitas Terbuka</span>
+                                <span class="flex-1 py-2 text-center rounded-xl bg-purple-600 text-white font-bold">Mode
+                                    Anonim (Rahasia)</span>
+                                <span
+                                    class="flex-1 py-2 text-center rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-500 font-semibold">Identitas
+                                    Terbuka</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-500">
-                                "Tolong fasilitas kipas angin di aula diperbaiki sebelum acara seminar bulan depan, dan jadwal ekstrakurikuler hari Jumat dirapikan..."
+                            <div
+                                class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-500">
+                                "Tolong fasilitas kipas angin di aula diperbaiki sebelum acara seminar bulan depan, dan
+                                jadwal ekstrakurikuler hari Jumat dirapikan..."
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-[11px] text-slate-500">Kategori: Fasilitas & Proker</span>
-                                <span class="px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-bold">Kirim Aspirasi</span>
+                                <span class="px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-bold">Kirim
+                                    Aspirasi</span>
                             </div>
                         </div>
                         <div class="space-y-3">
-                            <h4 class="font-extrabold text-sm sm:text-base">Transparansi Tanggapan di Halaman Publik:</h4>
+                            <h4 class="font-extrabold text-sm sm:text-base">Transparansi Tanggapan di Halaman Publik:
+                            </h4>
                             <div class="p-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 space-y-2">
                                 <div class="flex items-center justify-between">
                                     <span class="text-xs font-bold text-slate-500">Dari: Siswa Anonim (Kelas XI)</span>
-                                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500 text-white">Selesai Ditindaklanjuti</span>
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500 text-white">Selesai
+                                        Ditindaklanjuti</span>
                                 </div>
-                                <p class="text-xs italic">"Mohon ada transparansi jadwal seleksi lomba futsal antar kelas."</p>
-                                <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 text-xs border-l-4 border-brand-500">
-                                    <strong>Balasan Komisi B MPK:</strong> Terima kasih! Bagan pertandingan sudah kami rilis di menu Berita OSIS hari ini.
+                                <p class="text-xs italic">"Mohon ada transparansi jadwal seleksi lomba futsal antar
+                                    kelas."</p>
+                                <div
+                                    class="p-2.5 rounded-xl bg-white dark:bg-slate-800 text-xs border-l-4 border-brand-500">
+                                    <strong>Balasan Komisi B MPK:</strong> Terima kasih! Bagan pertandingan sudah kami
+                                    rilis di menu Berita OSIS hari ini.
                                 </div>
                             </div>
                         </div>
@@ -463,37 +584,46 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- 5. KATALOG PAKET UTAMA (PRICING CARDS) -->
     <section id="paket" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Katalog Harga Subsidi Pelajar</span>
+            <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Katalog Harga
+                Subsidi Pelajar</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-4">Pilih Paket Sesuai Kebutuhan Organisasimu</h2>
-            <p class="text-slate-600 dark:text-slate-400">Sekali bayar untuk pembuatan awal, sudah gratis domain <code class="text-brand-500 font-bold">.my.id</code> dan server tahun pertama. Tanpa biaya tersembunyi!</p>
+            <p class="text-slate-600 dark:text-slate-400">Sekali bayar untuk pembuatan awal, sudah gratis domain <code
+                    class="text-brand-500 font-bold">.my.id</code> dan server tahun pertama. Tanpa biaya tersembunyi!
+            </p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
-            
+
             <!-- PAKET WEB STATIS -->
-            <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:border-sky-500/50 transition-all">
+            <div
+                class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:border-sky-500/50 transition-all">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
-                        <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-600 dark:text-sky-400">
+                        <span
+                            class="px-3.5 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-600 dark:text-sky-400">
                             Ekskul, Klub & Kepanitiaan
                         </span>
                         <span class="text-xs font-semibold text-slate-500">Estimasi 3–5 Hari Kerja</span>
                     </div>
                     <h3 class="text-2xl font-extrabold mb-2">Paket Web Statis</h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-                        Landing page profil organisasi yang ringan, estetis, dan siap meningkatkan gengsi ekskul saat rekrutmen anggota baru.
+                        Landing page profil organisasi yang ringan, estetis, dan siap meningkatkan gengsi ekskul saat
+                        rekrutmen anggota baru.
                     </p>
 
                     <!-- Price Block -->
-                    <div class="p-5 rounded-2xl bg-slate-100/80 dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 mb-6">
+                    <div
+                        class="p-5 rounded-2xl bg-slate-100/80 dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 mb-6">
                         <div class="flex items-center gap-2 mb-1">
                             <span class="text-sm text-slate-400 line-through font-semibold">Harga Pasar Rp900.000</span>
-                            <span class="text-[11px] font-extrabold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500">Hemat 49%</span>
+                            <span
+                                class="text-[11px] font-extrabold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500">Hemat
+                                49%</span>
                         </div>
                         <div class="flex items-baseline gap-2">
                             <span class="text-4xl font-extrabold tracking-tight">Rp459.000</span>
@@ -502,52 +632,64 @@
                     </div>
 
                     <!-- Features List -->
-                    <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Spesifikasi & Fitur Bawaan:</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Spesifikasi & Fitur
+                        Bawaan:</p>
                     <ul class="space-y-3 text-sm mb-6">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-500 shrink-0 mt-0.5"></i>
-                            <span><strong>1 – 3 Halaman Utama:</strong> Beranda, Tentang/Divisi, Galeri Prestasi & Kontak.</span>
+                            <span><strong>1 – 3 Halaman Utama:</strong> Beranda, Tentang/Divisi, Galeri Prestasi &
+                                Kontak.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Gratis Domain .my.id</strong> (Aktif 1 Tahun Pertama) + Cloud Hosting Cepat & Stabil.</span>
+                            <span><strong>Gratis Domain .my.id</strong> (Aktif 1 Tahun Pertama) + Cloud Hosting Cepat &
+                                Stabil.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Responsive Design</strong> (HP/Laptop) + Transisi <em>Hover</em> & Klik Dasar yang mulus.</span>
+                            <span><strong>Responsive Design</strong> (HP/Laptop) + Transisi <em>Hover</em> & Klik Dasar
+                                yang mulus.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Desain Sesuai Identitas:</strong> Warna & tipografi selaras dengan logo ekskul.</span>
+                            <span><strong>Desain Sesuai Identitas:</strong> Warna & tipografi selaras dengan logo
+                                ekskul.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Integrasi Link & Sosmed:</strong> Tombol langsung ke Google Forms, WA, IG, TikTok, & YouTube.</span>
+                            <span><strong>Integrasi Link & Sosmed:</strong> Tombol langsung ke Google Forms, WA, IG,
+                                TikTok, & YouTube.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Optimasi Performa Gambar:</strong> Kompresi aset agar ringan dibuka dengan kuota siswa.</span>
+                            <span><strong>Optimasi Performa Gambar:</strong> Kompresi aset agar ringan dibuka dengan
+                                kuota siswa.</span>
                         </li>
                     </ul>
 
                     <!-- Highlight Kebijakan Update Statis -->
                     <div class="p-4 rounded-2xl bg-sky-500/10 border border-sky-500/25 mb-8">
-                        <div class="flex items-center gap-2 text-sky-600 dark:text-sky-400 font-extrabold text-xs uppercase tracking-wider mb-1.5">
+                        <div
+                            class="flex items-center gap-2 text-sky-600 dark:text-sky-400 font-extrabold text-xs uppercase tracking-wider mb-1.5">
                             <i data-lucide="sparkles" class="w-4 h-4"></i>
                             <span>Kebijakan Update Konten Fleksibel</span>
                         </div>
                         <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                            <strong>GRATIS 1x Update Konten Pertama</strong> kapan saja di tahun pertama! Butuh update foto kegiatan atau prestasi berikutnya? Cukup <strong>Rp25.000 / sesi update</strong> (direkomendasikan per 3 bulan, maks. 10 foto & teks dalam 1x kirim folder Drive).
+                            <strong>GRATIS 1x Update Konten Pertama</strong> kapan saja di tahun pertama! Butuh update
+                            foto kegiatan atau prestasi berikutnya? Cukup <strong>Rp25.000 / sesi update</strong>
+                            (direkomendasikan per 3 bulan, maks. 10 foto & teks dalam 1x kirim folder Drive).
                         </p>
                     </div>
                 </div>
 
                 <div>
-                    <div class="text-xs text-slate-500 dark:text-slate-400 mb-4 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4">
+                    <div
+                        class="text-xs text-slate-500 dark:text-slate-400 mb-4 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4">
                         <span>Perpanjangan Tahun ke-2 dst:</span>
                         <strong class="text-slate-800 dark:text-slate-200">Rp100.000 / tahun</strong>
                     </div>
-                    <button onclick="selectPackageInCalc('statis')" class="w-full py-4 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg">
+                    <button onclick="selectPackageInCalc('statis')"
+                        class="w-full py-4 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg">
                         <span>Simulasikan Paket Statis</span>
                         <i data-lucide="calculator" class="w-4 h-4"></i>
                     </button>
@@ -555,83 +697,101 @@
             </div>
 
             <!-- PAKET WEB DINAMIS -->
-            <div class="glass-card rounded-3xl p-8 border-2 border-brand-500 shadow-2xl shadow-brand-500/15 flex flex-col justify-between relative">
+            <div
+                class="glass-card rounded-3xl p-8 border-2 border-brand-500 shadow-2xl shadow-brand-500/15 flex flex-col justify-between relative">
                 <!-- Popular Badge -->
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-600 to-sky-500 text-white text-xs font-extrabold px-5 py-1.5 rounded-full shadow-lg whitespace-nowrap">
+                <div
+                    class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-600 to-sky-500 text-white text-xs font-extrabold px-5 py-1.5 rounded-full shadow-lg whitespace-nowrap">
                     ★ PALING POPULER UNTUK OSIS & MPK
                 </div>
 
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4 mt-2">
-                        <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-brand-500/15 text-brand-600 dark:text-brand-400">
+                        <span
+                            class="px-3.5 py-1 rounded-full text-xs font-bold bg-brand-500/15 text-brand-600 dark:text-brand-400">
                             OSIS, MPK & Ekskul Besar
                         </span>
                         <span class="text-xs font-semibold text-slate-500">Estimasi 7–14 Hari Kerja</span>
                     </div>
                     <h3 class="text-2xl font-extrabold mb-2">Paket Web Dinamis + CMS</h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-                        Dilengkapi Dashboard Admin khusus pengurus. Bebas tambah artikel berita acara, update proker, dan ganti foto kabinet mandiri kapan saja tanpa koding!
+                        Dilengkapi Dashboard Admin khusus pengurus. Bebas tambah artikel berita acara, update proker,
+                        dan ganti foto kabinet mandiri kapan saja tanpa koding!
                     </p>
 
                     <!-- Price Block -->
                     <div class="p-5 rounded-2xl bg-brand-500/10 border border-brand-500/30 mb-6">
                         <div class="flex items-center gap-2 mb-1">
-                            <span class="text-sm text-slate-400 line-through font-semibold">Harga Pasar Rp2.000.000</span>
-                            <span class="text-[11px] font-extrabold px-2 py-0.5 rounded bg-brand-600 text-white">Hemat 55%</span>
+                            <span class="text-sm text-slate-400 line-through font-semibold">Harga Pasar
+                                Rp2.000.000</span>
+                            <span class="text-[11px] font-extrabold px-2 py-0.5 rounded bg-brand-600 text-white">Hemat
+                                55%</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-4xl font-extrabold tracking-tight text-brand-600 dark:text-brand-400">Rp899.000</span>
+                            <span
+                                class="text-4xl font-extrabold tracking-tight text-brand-600 dark:text-brand-400">Rp899.000</span>
                             <span class="text-xs font-semibold text-slate-500">/ sekali bayar (Tahun ke-1)</span>
                         </div>
                     </div>
 
                     <!-- Features List -->
-                    <p class="text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">Semua Fitur Paket Statis, Ditambah:</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">Semua Fitur Paket Statis,
+                        Ditambah:</p>
                     <ul class="space-y-3 text-sm mb-6">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Dashboard Admin Khusus Pengurus:</strong> Login aman bagi BPH / Seksi Humas untuk kelola konten mandiri sepuasnya.</span>
+                            <span><strong>Dashboard Admin Khusus Pengurus:</strong> Login aman bagi BPH / Seksi Humas
+                                untuk kelola konten mandiri sepuasnya.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Modul Berita & Program Kerja (CMS):</strong> Publikasi artikel acara, pengumuman sekolah, & status proker secara <em>real-time</em>.</span>
+                            <span><strong>Modul Berita & Program Kerja (CMS):</strong> Publikasi artikel acara,
+                                pengumuman sekolah, & status proker secara <em>real-time</em>.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Manajemen Kabinet & Struktur:</strong> Mudah ganti foto, nama, dan jabatan saat serah terima jabatan periode baru.</span>
+                            <span><strong>Manajemen Kabinet & Struktur:</strong> Mudah ganti foto, nama, dan jabatan
+                                saat serah terima jabatan periode baru.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Database Cloud PostgreSQL (Supabase):</strong> Performa modern tanpa takut limit kuota baca/tulis harian.</span>
+                            <span><strong>Database Cloud PostgreSQL (Supabase):</strong> Performa modern tanpa takut
+                                limit kuota baca/tulis harian.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Keamanan Row Level Security (RLS):</strong> Proteksi database tingkat lanjut dari akses publik tak berwenang.</span>
+                            <span><strong>Keamanan Row Level Security (RLS):</strong> Proteksi database tingkat lanjut
+                                dari akses publik tak berwenang.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
-                            <span><strong>Fitur Share Artikel Berita:</strong> Tombol bagikan berita proker langsung ke WhatsApp & Instagram Story.</span>
+                            <span><strong>Fitur Share Artikel Berita:</strong> Tombol bagikan berita proker langsung ke
+                                WhatsApp & Instagram Story.</span>
                         </li>
                     </ul>
 
                     <!-- Highlight Keunggulan Dinamis -->
                     <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 mb-8">
-                        <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-extrabold text-xs uppercase tracking-wider mb-1">
+                        <div
+                            class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-extrabold text-xs uppercase tracking-wider mb-1">
                             <i data-lucide="infinity" class="w-4 h-4"></i>
                             <span>Update Mandiri Tanpa Batas</span>
                         </div>
                         <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                            Tidak perlu bayar biaya per sesi saat mau upload berita baru. Pengurus bisa tambah ratusan artikel proker & pengumuman langsung dari HP atau laptop.
+                            Tidak perlu bayar biaya per sesi saat mau upload berita baru. Pengurus bisa tambah ratusan
+                            artikel proker & pengumuman langsung dari HP atau laptop.
                         </p>
                     </div>
                 </div>
 
                 <div>
-                    <div class="text-xs text-slate-500 dark:text-slate-400 mb-4 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4">
+                    <div
+                        class="text-xs text-slate-500 dark:text-slate-400 mb-4 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4">
                         <span>Perpanjangan Tahun ke-2 dst (Server + DB 24/7):</span>
                         <strong class="text-slate-800 dark:text-slate-200">Rp200.000 / tahun</strong>
                     </div>
-                    <button onclick="selectPackageInCalc('dinamis')" class="w-full py-4 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white font-extrabold text-sm transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-600/30">
+                    <button onclick="selectPackageInCalc('dinamis')"
+                        class="w-full py-4 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white font-extrabold text-sm transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-600/30">
                         <span>Simulasikan Paket Dinamis</span>
                         <i data-lucide="calculator" class="w-4 h-4"></i>
                     </button>
@@ -644,17 +804,21 @@
     <!-- 6. DAFTAR ADD-ONS & BIAYA PERPANJANGAN -->
     <section id="addons" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Kustomisasi Sesuai Proker</span>
+            <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Kustomisasi
+                Sesuai Proker</span>
             <h2 class="text-3xl font-extrabold mt-2 mb-3">Daftar Add-Ons & Perpanjangan Tahunan</h2>
-            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">Tingkatkan fungsionalitas website organisasimu dengan fitur tambahan yang paling dibutuhkan siswa.</p>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">Tingkatkan fungsionalitas website
+                organisasimu dengan fitur tambahan yang paling dibutuhkan siswa.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 mb-10">
             <!-- Add-on 1: Special MPK/OSIS -->
-            <div class="glass-card p-6 rounded-3xl border-2 border-purple-500/50 relative flex flex-col justify-between">
+            <div
+                class="glass-card p-6 rounded-3xl border-2 border-purple-500/50 relative flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
-                        <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-purple-500 text-white">Khusus Paket Dinamis</span>
+                        <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-purple-500 text-white">Khusus
+                            Paket Dinamis</span>
                         <span class="text-lg font-extrabold text-purple-600 dark:text-purple-400">+Rp100.000</span>
                     </div>
                     <h3 class="text-lg font-extrabold mb-2 flex items-center gap-2">
@@ -662,21 +826,27 @@
                         Kotak Aspirasi Siswa / Suara MPK
                     </h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                        Senjata utama proker MPK & OSIS! Siswa bisa kirim kritik, saran, atau aspirasi langsung di website.
+                        Senjata utama proker MPK & OSIS! Siswa bisa kirim kritik, saran, atau aspirasi langsung di
+                        website.
                     </p>
                 </div>
-                <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-3">
+                <ul
+                    class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-3">
                     <li>• Pilihan kirim mode <strong>Anonim</strong> atau <strong>Identitas Terbuka</strong></li>
                     <li>• Dilengkapi proteksi <em>anti-spam</em> (<em>rate-limiting</em>)</li>
-                    <li>• Menu filter kategori, status (<em>Diproses/Selesai</em>), & balasan publik di Dashboard Admin</li>
+                    <li>• Menu filter kategori, status (<em>Diproses/Selesai</em>), & balasan publik di Dashboard Admin
+                    </li>
                 </ul>
             </div>
 
             <!-- Add-on 2: Scroll Animation -->
-            <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div
+                class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
-                        <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Statis & Dinamis</span>
+                        <span
+                            class="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Statis
+                            & Dinamis</span>
                         <span class="text-lg font-extrabold text-brand-600 dark:text-brand-400">+Rp75.000</span>
                     </div>
                     <h3 class="text-lg font-extrabold mb-2 flex items-center gap-2">
@@ -684,20 +854,25 @@
                         Interactive & Smooth Scroll Animation
                     </h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                        Bikin tampilan website jauh lebih hidup, modern, dan eksklusif saat dibuka di HP maupun proyektor sekolah.
+                        Bikin tampilan website jauh lebih hidup, modern, dan eksklusif saat dibuka di HP maupun
+                        proyektor sekolah.
                     </p>
                 </div>
-                <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-3">
+                <ul
+                    class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-3">
                     <li>• Efek animasi saat di-<em>scroll</em> (<em>fade-in, slide-up, parallax</em> ringan)</li>
                     <li>• <em>Loading screen</em> khusus beranimasi logo resmi organisasi</li>
                 </ul>
             </div>
 
             <!-- Add-on 3: Open Recruitment Sheets -->
-            <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div
+                class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
-                        <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Statis & Dinamis</span>
+                        <span
+                            class="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Statis
+                            & Dinamis</span>
                         <span class="text-lg font-extrabold text-sky-600 dark:text-sky-400">+Rp75.000</span>
                     </div>
                     <h3 class="text-lg font-extrabold mb-2 flex items-center gap-2">
@@ -705,10 +880,12 @@
                         Form Open Recruitment ke Sheets
                     </h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                        Siswa baru tidak perlu terlempar ke halaman Google Form biasa saat mendaftar ekskul atau kepanitiaan.
+                        Siswa baru tidak perlu terlempar ke halaman Google Form biasa saat mendaftar ekskul atau
+                        kepanitiaan.
                     </p>
                 </div>
-                <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-3">
+                <ul
+                    class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-3">
                     <li>• Formulir pendaftaran tertanam langsung di dalam desain web</li>
                     <li>• Data pendaftar otomatis masuk & tersusun rapi di Google Sheets pengurus</li>
                 </ul>
@@ -724,23 +901,29 @@
                     Opsi Upgrade Ekstensi Domain (Opsional)
                 </h4>
                 <div class="space-y-3 text-xs sm:text-sm">
-                    <div class="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-900/70 flex items-center justify-between">
+                    <div
+                        class="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-900/70 flex items-center justify-between">
                         <div>
                             <p class="font-bold">Domain Bawaan <code class="text-brand-500">.my.id</code></p>
                             <p class="text-xs text-slate-500">Contoh: osis-sman1.my.id / paskibra-smkn2.my.id</p>
                         </div>
                         <span class="font-extrabold text-emerald-500">GRATIS Tahun ke-1</span>
                     </div>
-                    <div class="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-900/70 flex items-center justify-between">
+                    <!-- <div
+                        class="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-900/70 flex items-center justify-between">
                         <div>
-                            <p class="font-bold">Upgrade Domain Resmi <code class="text-sky-500">.or.id</code> / <code class="text-sky-500">.sch.id</code></p>
+                            <p class="font-bold">Upgrade Domain Resmi <code class="text-sky-500">.or.id</code> / <code
+                                    class="text-sky-500">.sch.id</code></p>
                             <p class="text-xs text-slate-500">Butuh surat keterangan pembina / kepala sekolah</p>
                         </div>
                         <span class="font-extrabold">+Rp100.000 / thn</span>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-900/70 flex items-center justify-between">
+                    </div> -->
+                    <div
+                        class="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-900/70 flex items-center justify-between">
                         <div>
-                            <p class="font-bold">Upgrade Domain Populer <code class="text-purple-500">.com</code> / <code class="text-purple-500">.org</code></p>
+                            <p class="font-bold">Upgrade Domain Populer <code class="text-purple-500">.com</code> /
+                                <code class="text-purple-500">.org</code>
+                            </p>
                             <p class="text-xs text-slate-500">Tanpa syarat dokumen khusus, langsung aktif</p>
                         </div>
                         <span class="font-extrabold">+Rp175.000 / thn</span>
@@ -749,140 +932,174 @@
             </div>
 
             <!-- Tahun ke-2 Renewal Info -->
-            <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div
+                class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
                 <div>
                     <h4 class="font-extrabold text-base mb-2 flex items-center gap-2">
                         <i data-lucide="calendar-clock" class="w-5 h-5 text-emerald-500"></i>
                         Biaya Perpanjangan Tahunan (Mulai Tahun ke-2)
                     </h4>
                     <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
-                        Saat berganti kepengurusan di tahun ajaran berikutnya, adik kelas kalian cukup membayar biaya tahunan super ringan:
+                        Saat berganti kepengurusan di tahun ajaran berikutnya, adik kelas kalian cukup membayar biaya
+                        tahunan super ringan:
                     </p>
                     <div class="grid sm:grid-cols-2 gap-3 text-xs">
                         <div class="p-4 rounded-2xl bg-sky-500/10 border border-sky-500/20">
                             <p class="font-bold text-sky-600 dark:text-sky-400 uppercase">Perpanjangan Statis</p>
-                            <p class="text-xl font-extrabold my-1">Rp100.000<span class="text-xs font-normal">/thn</span></p>
-                            <p class="text-slate-600 dark:text-slate-400">Sudah termasuk domain .my.id, server hosting, & <strong>gratis 1x update struktur pengurus angkatan baru</strong>.</p>
+                            <p class="text-xl font-extrabold my-1">Rp100.000<span
+                                    class="text-xs font-normal">/thn</span></p>
+                            <p class="text-slate-600 dark:text-slate-400">Sudah termasuk domain .my.id, server hosting,
+                                & <strong>gratis 1x update struktur pengurus angkatan baru</strong>.</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/20">
                             <p class="font-bold text-brand-600 dark:text-brand-400 uppercase">Perpanjangan Dinamis</p>
-                            <p class="text-xl font-extrabold my-1">Rp200.000<span class="text-xs font-normal">/thn</span></p>
-                            <p class="text-slate-600 dark:text-slate-400">Domain .my.id, server & database cloud 24/7, backup tahunan, & <strong>pendampingan (handover) admin baru</strong>.</p>
+                            <p class="text-xl font-extrabold my-1">Rp200.000<span
+                                    class="text-xs font-normal">/thn</span></p>
+                            <p class="text-slate-600 dark:text-slate-400">Domain .my.id, server & database cloud 24/7,
+                                backup tahunan, & <strong>pendampingan (handover) admin baru</strong>.</p>
                         </div>
                     </div>
                 </div>
-                <p class="text-[11px] text-slate-400 italic mt-3">*Catatan: Jika menggunakan add-on domain .com atau .or.id, biaya perpanjangan tahunan menyesuaikan harga domain tersebut.</p>
+                <p class="text-[11px] text-slate-400 italic mt-3">*Catatan: Jika menggunakan add-on domain .com atau
+                    .or.id, biaya perpanjangan tahunan menyesuaikan harga domain tersebut.</p>
             </div>
         </div>
     </section>
 
-    <!-- 7. FITUR UNGGULAN INTERAKTIF: KALKULATOR SIMULASI ANGGARAN PROPOSAL -->
+    <!-- 7. FITUR UNGGULAN INTERAKTIF: KALKULATOR SIMULASI ANGGARAN Harga -->
     <section id="kalkulator" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="glass-card rounded-3xl p-6 sm:p-10 border-2 border-brand-500/40 shadow-2xl">
             <div class="max-w-3xl mb-10">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-bold mb-3">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-bold mb-3">
                     <i data-lucide="sparkles" class="w-4 h-4"></i>
                     <span>Alat Bantu Ketua OSIS, MPK & Bendahara Ekskul</span>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-extrabold mb-2">Kalkulator Simulasi Anggaran Proposal</h2>
+                <h2 class="text-2xl sm:text-4xl font-extrabold mb-2">Kalkulator Simulasi Anggaran Harga</h2>
                 <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-                    Susun paket website sesuai uang kas atau anggaran proker kalian, lihat hitungan DP 50%, lalu <strong>salin rinciannya</strong> untuk ditempel ke proposal kesiswaan atau grup WhatsApp BPH!
+                    Susun paket website sesuai uang kas atau anggaran proker kalian, lihat hitungan DP 50%, lalu
+                    <strong>salin rinciannya</strong> untuk ditempel ke Harga kesiswaan atau grup WhatsApp BPH!
                 </p>
             </div>
 
             <div class="grid lg:grid-cols-12 gap-8 items-start">
                 <!-- Left Column: Interactive Options (7 cols) -->
                 <div class="lg:col-span-7 space-y-6">
-                    
+
                     <!-- Step 1: Nama Organisasi (Opsional) -->
                     <div>
-                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                            1. Nama Organisasi / Sekolah (Opsional untuk Draf Proposal)
+                        <label
+                            class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                            1. Nama Organisasi / Sekolah (Opsional untuk Draf Harga)
                         </label>
-                        <input type="text" id="orgNameInput" oninput="calculatePricing()" placeholder="Contoh: OSIS SMAN 1 Harapan / Ekskul Rohis" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm focus:outline-none focus:border-brand-500">
+                        <input type="text" id="orgNameInput" oninput="calculatePricing()"
+                            placeholder="Contoh: OSIS SMAN 1 Harapan / Ekskul Rohis"
+                            class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm focus:outline-none focus:border-brand-500">
                     </div>
 
                     <!-- Step 2: Pilih Paket Utama -->
                     <div>
-                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                        <label
+                            class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                             2. Pilih Paket Website Utama
                         </label>
                         <div class="grid sm:grid-cols-2 gap-4">
-                            <button type="button" onclick="setBasePackage('statis')" id="btn-pkg-statis" class="text-left p-4 rounded-2xl border-2 transition-all">
+                            <button type="button" onclick="setBasePackage('statis')" id="btn-pkg-statis"
+                                class="text-left p-4 rounded-2xl border-2 transition-all">
                                 <div class="flex items-center justify-between mb-1">
                                     <span class="font-extrabold text-base">Paket Web Statis</span>
-                                    <span class="text-xs font-bold px-2 py-0.5 rounded bg-sky-500/10 text-sky-500">Ekskul</span>
+                                    <span
+                                        class="text-xs font-bold px-2 py-0.5 rounded bg-sky-500/10 text-sky-500">Ekskul</span>
                                 </div>
                                 <p class="text-xl font-extrabold text-sky-500 mb-1">Rp459.000</p>
-                                <p class="text-xs text-slate-500">1-3 Halaman + Gratis .my.id + Gratis 1x Update Pertama</p>
+                                <p class="text-xs text-slate-500">1-3 Halaman + Gratis .my.id + Gratis 1x Update Pertama
+                                </p>
                             </button>
 
-                            <button type="button" onclick="setBasePackage('dinamis')" id="btn-pkg-dinamis" class="text-left p-4 rounded-2xl border-2 transition-all">
+                            <button type="button" onclick="setBasePackage('dinamis')" id="btn-pkg-dinamis"
+                                class="text-left p-4 rounded-2xl border-2 transition-all">
                                 <div class="flex items-center justify-between mb-1">
                                     <span class="font-extrabold text-base">Paket Web Dinamis</span>
-                                    <span class="text-xs font-bold px-2 py-0.5 rounded bg-brand-500/10 text-brand-500">OSIS/MPK</span>
+                                    <span
+                                        class="text-xs font-bold px-2 py-0.5 rounded bg-brand-500/10 text-brand-500">OSIS/MPK</span>
                                 </div>
                                 <p class="text-xl font-extrabold text-brand-500 mb-1">Rp899.000</p>
-                                <p class="text-xs text-slate-500">CMS Dashboard Admin + Database Supabase RLS + Gratis .my.id</p>
+                                <p class="text-xs text-slate-500">CMS Dashboard Admin + Database Supabase RLS + Gratis
+                                    .my.id</p>
                             </button>
                         </div>
                     </div>
 
                     <!-- Step 3: Pilih Add-Ons -->
                     <div>
-                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                        <label
+                            class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                             3. Pilih Fitur Tambahan (Add-Ons)
                         </label>
                         <div class="space-y-2.5">
                             <!-- Addon: Scroll Animation -->
-                            <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer hover:border-brand-500/50 transition-all">
+                            <label
+                                class="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer hover:border-brand-500/50 transition-all">
                                 <div class="flex items-center gap-3">
-                                    <input type="checkbox" id="chk-animasi" onchange="calculatePricing()" class="w-4 h-4 accent-brand-600 rounded">
+                                    <input type="checkbox" id="chk-animasi" onchange="calculatePricing()"
+                                        class="w-4 h-4 accent-brand-600 rounded">
                                     <div>
                                         <p class="font-bold text-sm">Interactive & Smooth Scroll Animation</p>
-                                        <p class="text-xs text-slate-500">Efek scroll modern + loading screen logo organisasi</p>
+                                        <p class="text-xs text-slate-500">Efek scroll modern + loading screen logo
+                                            organisasi</p>
                                     </div>
                                 </div>
                                 <span class="font-extrabold text-sm text-brand-600 dark:text-brand-400">+Rp75.000</span>
                             </label>
 
                             <!-- Addon: Form Oprec Sheets -->
-                            <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer hover:border-brand-500/50 transition-all">
+                            <label
+                                class="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer hover:border-brand-500/50 transition-all">
                                 <div class="flex items-center gap-3">
-                                    <input type="checkbox" id="chk-oprec" onchange="calculatePricing()" class="w-4 h-4 accent-brand-600 rounded">
+                                    <input type="checkbox" id="chk-oprec" onchange="calculatePricing()"
+                                        class="w-4 h-4 accent-brand-600 rounded">
                                     <div>
                                         <p class="font-bold text-sm">Formulir Open Recruitment Terintegrasi Sheets</p>
-                                        <p class="text-xs text-slate-500">Form tertanam di web, otomatis masuk Google Sheets</p>
+                                        <p class="text-xs text-slate-500">Form tertanam di web, otomatis masuk Google
+                                            Sheets</p>
                                     </div>
                                 </div>
                                 <span class="font-extrabold text-sm text-brand-600 dark:text-brand-400">+Rp75.000</span>
                             </label>
 
                             <!-- Addon: Kotak Aspirasi (Dinamis Only) -->
-                            <label id="lbl-aspirasi" class="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer hover:border-purple-500/50 transition-all">
+                            <label id="lbl-aspirasi"
+                                class="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer hover:border-purple-500/50 transition-all">
                                 <div class="flex items-center gap-3">
-                                    <input type="checkbox" id="chk-aspirasi" onchange="calculatePricing()" class="w-4 h-4 accent-purple-600 rounded">
+                                    <input type="checkbox" id="chk-aspirasi" onchange="calculatePricing()"
+                                        class="w-4 h-4 accent-purple-600 rounded">
                                     <div>
                                         <div class="flex items-center gap-2">
                                             <p class="font-bold text-sm">Fitur Kotak Aspirasi Siswa / Suara MPK</p>
-                                            <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-purple-500/15 text-purple-500">Dinamis Only</span>
+                                            <span
+                                                class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-purple-500/15 text-purple-500">Dinamis
+                                                Only</span>
                                         </div>
-                                        <p class="text-xs text-slate-500">Mode Anonim/Terbuka + kelola & balas di Dashboard Admin</p>
+                                        <p class="text-xs text-slate-500">Mode Anonim/Terbuka + kelola & balas di
+                                            Dashboard Admin</p>
                                     </div>
                                 </div>
-                                <span class="font-extrabold text-sm text-purple-600 dark:text-purple-400">+Rp100.000</span>
+                                <span
+                                    class="font-extrabold text-sm text-purple-600 dark:text-purple-400">+Rp100.000</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- Step 4: Pilihan Domain -->
                     <div>
-                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                        <label
+                            class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                             4. Pilihan Ekstensi Domain
                         </label>
-                        <select id="sel-domain" onchange="calculatePricing()" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm font-semibold focus:outline-none focus:border-brand-500">
+                        <select id="sel-domain" onchange="calculatePricing()"
+                            class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm font-semibold focus:outline-none focus:border-brand-500">
                             <option value="myid">Domain Bawaan .my.id (GRATIS Tahun Pertama)</option>
-                            <option value="orid">Upgrade Domain Resmi .or.id / .sch.id (+Rp100.000/tahun)</option>
+                            <!-- <option value="orid">Upgrade Domain Resmi .or.id / .sch.id (+Rp100.000/tahun)</option> -->
                             <option value="com">Upgrade Domain Internasional .com / .org (+Rp175.000/tahun)</option>
                         </select>
                     </div>
@@ -891,10 +1108,15 @@
                     <div id="box-statis-updates" class="p-4 rounded-2xl bg-sky-500/10 border border-sky-500/20">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                             <div>
-                                <p class="font-extrabold text-sm text-sky-600 dark:text-sky-400">Simulasi Kuota Update Konten Tahunan (Khusus Statis)</p>
-                                <p class="text-xs text-slate-600 dark:text-slate-400">Update ke-1 <strong>GRATIS</strong>. Ingin sekalian anggarkan sesi update berkala (Rp25.000/sesi per 3 bulan) di proposal tahunan?</p>
+                                <p class="font-extrabold text-sm text-sky-600 dark:text-sky-400">Simulasi Kuota Update
+                                    Konten Tahunan (Khusus Statis)</p>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Update ke-1
+                                    <strong>GRATIS</strong>. Ingin sekalian anggarkan sesi update berkala (Rp25.000/sesi
+                                    per 3 bulan) di Harga tahunan?
+                                </p>
                             </div>
-                            <select id="sel-statis-update" onchange="calculatePricing()" class="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-xs font-bold shrink-0">
+                            <select id="sel-statis-update" onchange="calculatePricing()"
+                                class="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-xs font-bold shrink-0">
                                 <option value="0">Hanya 1x Update Gratis (Rp0)</option>
                                 <option value="1">+1x Sesi Update Berkala (+Rp25.000)</option>
                                 <option value="2">+2x Sesi Update Berkala (+Rp50.000)</option>
@@ -906,13 +1128,16 @@
                 </div>
 
                 <!-- Right Column: Live Summary Receipt (5 cols) -->
-                <div class="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-6 sm:p-7 border border-slate-800 shadow-2xl sticky top-28">
+                <div
+                    class="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-6 sm:p-7 border border-slate-800 shadow-2xl sticky top-28">
                     <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
                         <div>
-                            <span class="text-[11px] font-bold uppercase tracking-widest text-brand-400">Ringkasan Anggaran</span>
-                            <h3 class="text-xl font-extrabold" id="summaryOrgTitle">Draf Proposal Website</h3>
+                            <span class="text-[11px] font-bold uppercase tracking-widest text-brand-400">Ringkasan
+                                Anggaran</span>
+                            <h3 class="text-xl font-extrabold" id="summaryOrgTitle">Draf Harga Website</h3>
                         </div>
-                        <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center">
                             <i data-lucide="receipt" class="w-5 h-5"></i>
                         </div>
                     </div>
@@ -937,15 +1162,18 @@
                         <div class="grid grid-cols-2 gap-2.5 pt-2">
                             <div class="p-3 rounded-xl bg-slate-800/90 border border-slate-700">
                                 <span class="block text-[11px] text-slate-400">DP Awal (50%)</span>
-                                <span id="summaryDP" class="font-extrabold text-sm sm:text-base text-white">Rp449.500</span>
+                                <span id="summaryDP"
+                                    class="font-extrabold text-sm sm:text-base text-white">Rp449.500</span>
                             </div>
                             <div class="p-3 rounded-xl bg-slate-800/90 border border-slate-700">
                                 <span class="block text-[11px] text-slate-400">Pelunasan Rilis (50%)</span>
-                                <span id="summaryPelunasan" class="font-extrabold text-sm sm:text-base text-white">Rp449.500</span>
+                                <span id="summaryPelunasan"
+                                    class="font-extrabold text-sm sm:text-base text-white">Rp449.500</span>
                             </div>
                         </div>
 
-                        <div class="p-3 rounded-xl bg-brand-950/60 border border-brand-800/60 flex items-center justify-between text-xs">
+                        <div
+                            class="p-3 rounded-xl bg-brand-950/60 border border-brand-800/60 flex items-center justify-between text-xs">
                             <span class="text-brand-300">Estimasi Perpanjangan Tahun ke-2:</span>
                             <strong id="summaryRenewal" class="text-brand-200">Rp200.000 / tahun</strong>
                         </div>
@@ -953,13 +1181,15 @@
 
                     <!-- Action Buttons -->
                     <div class="space-y-3">
-                        <button type="button" onclick="sendToWhatsApp()" class="w-full py-3.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
+                        <button type="button" onclick="sendToWhatsApp()"
+                            class="w-full py-3.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
                             <i data-lucide="send" class="w-4 h-4"></i>
                             <span>Ajukan Paket Ini via WhatsApp</span>
                         </button>
-                        <button type="button" onclick="copyProposalText()" class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs sm:text-sm border border-slate-700 transition-all flex items-center justify-center gap-2">
+                        <button type="button" onclick="copyHargaText()"
+                            class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs sm:text-sm border border-slate-700 transition-all flex items-center justify-center gap-2">
                             <i data-lucide="copy" class="w-4 h-4 text-brand-400"></i>
-                            <span>Salin Rincian untuk Proposal / Grup WA</span>
+                            <span>Salin Rincian untuk Harga / Grup WA</span>
                         </button>
                     </div>
                 </div>
@@ -970,68 +1200,89 @@
     <!-- 8. ALUR PENGERJAAN & KETENTUAN LAYANAN (T&C) -->
     <section id="ketentuan" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Transparan & Profesional</span>
+            <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">Transparan &
+                Profesional</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-4">Alur Kerja & Ketentuan Layanan</h2>
-            <p class="text-slate-600 dark:text-slate-400">Aturan main yang jelas supaya pengurus nyaman, anggaran aman, dan website rilis tepat waktu sesuai jadwal proker kalian.</p>
+            <p class="text-slate-600 dark:text-slate-400">Aturan main yang jelas supaya pengurus nyaman, anggaran aman,
+                dan website rilis tepat waktu sesuai jadwal proker kalian.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- T&C 1 -->
             <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800">
-                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-extrabold mb-4">
+                <div
+                    class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-extrabold mb-4">
                     <i data-lucide="credit-card" class="w-5 h-5"></i>
                 </div>
                 <h3 class="font-extrabold text-base mb-2">1. Sistem Pembayaran Aman (DP 50%)</h3>
                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    <strong>DP (Down Payment) 50%</strong> dibayarkan di awal setelah kesepakatan konsep desain, dan <strong>pelunasan 50%</strong> dibayarkan setelah website selesai dikerjakan dan siap dipublikasikan secara resmi.
+                    <strong>DP (Down Payment) 50%</strong> dibayarkan di awal setelah kesepakatan konsep desain, dan
+                    <strong>pelunasan 50%</strong> dibayarkan setelah website selesai dikerjakan dan siap dipublikasikan
+                    secara resmi.
                 </p>
             </div>
 
             <!-- T&C 2 -->
             <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800">
-                <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center font-extrabold mb-4">
+                <div
+                    class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center font-extrabold mb-4">
                     <i data-lucide="folder-up" class="w-5 h-5"></i>
                 </div>
                 <h3 class="font-extrabold text-base mb-2">2. Kesiapan Materi Konten (1 Folder Drive)</h3>
                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Teks profil, daftar nama pengurus, logo organisasi, dan foto kegiatan disediakan oleh pihak organisasi dalam <strong>satu folder Google Drive</strong>. Untuk paket Dinamis, kami sediakan panduan singkat cara input mandiri.
+                    Teks profil, daftar nama pengurus, logo organisasi, dan foto kegiatan disediakan oleh pihak
+                    organisasi dalam <strong>satu folder Google Drive</strong>. Untuk paket Dinamis, kami sediakan
+                    panduan singkat cara input mandiri.
                 </p>
             </div>
 
             <!-- T&C 3 -->
             <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800">
-                <div class="w-11 h-11 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-extrabold mb-4">
+                <div
+                    class="w-11 h-11 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-extrabold mb-4">
                     <i data-lucide="Sliders" class="w-5 h-5"></i>
                 </div>
                 <h3 class="font-extrabold text-base mb-2">3. Batas Revisi Desain (Maks. 3x Minor)</h3>
                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Gratis maksimal <strong>3x revisi minor</strong> (perubahan palet warna, tata letak teks, atau pergantian gambar) selama masa pengerjaan sebelum web rilis. Perombakan struktur halaman total di luar kesepakatan awal dikenakan biaya tambahan.
+                    Gratis maksimal <strong>3x revisi minor</strong> (perubahan palet warna, tata letak teks, atau
+                    pergantian gambar) selama masa pengerjaan sebelum web rilis. Perombakan struktur halaman total di
+                    luar kesepakatan awal dikenakan biaya tambahan.
                 </p>
             </div>
 
             <!-- T&C 4 -->
             <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800">
-                <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-extrabold mb-4">
+                <div
+                    class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-extrabold mb-4">
                     <i data-lucide="timer" class="w-5 h-5"></i>
                 </div>
                 <h3 class="font-extrabold text-base mb-2">4. Estimasi Waktu Pengerjaan Cepat</h3>
                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Pengerjaan membutuhkan waktu <strong>3–5 hari kerja</strong> untuk Paket Web Statis, dan <strong>7–14 hari kerja</strong> untuk Paket Web Dinamis (terhitung sejak pembayaran DP dan materi konten awal diterima lengkap).
+                    Pengerjaan membutuhkan waktu <strong>3–5 hari kerja</strong> untuk Paket Web Statis, dan
+                    <strong>7–14 hari kerja</strong> untuk Paket Web Dinamis (terhitung sejak pembayaran DP dan materi
+                    konten awal diterima lengkap).
                 </p>
             </div>
 
             <!-- T&C 5: Aturan Update Statis (Span 2 cols on lg) -->
             <div class="glass-card p-6 rounded-3xl border border-sky-500/40 md:col-span-2 bg-sky-500/5">
                 <div class="flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-500 flex items-center justify-center shrink-0 mt-0.5">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-500 flex items-center justify-center shrink-0 mt-0.5">
                         <i data-lucide="refresh-cw" class="w-5 h-5"></i>
                     </div>
                     <div>
-                        <h3 class="font-extrabold text-base mb-1.5">5. Aturan Update Konten Berkala (Khusus Paket Web Statis)</h3>
+                        <h3 class="font-extrabold text-base mb-1.5">5. Aturan Update Konten Berkala (Khusus Paket Web
+                            Statis)</h3>
                         <ul class="space-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                            <li>• <strong>Gratis 1x Update Konten Pertama:</strong> Berlaku kapan saja di tahun pertama setelah website resmi dirilis.</li>
-                            <li>• <strong>Layanan Update Berkala (Rp25.000 / sesi):</strong> Direkomendasikan setiap 3 bulan sekali untuk memperbarui galeri foto kegiatan (maks. 10 foto), daftar prestasi terbaru, teks informasi, atau tautan pendaftaran tanpa mengubah desain halaman.</li>
-                            <li>• <strong>Sistem Single-Batch:</strong> Seluruh materi pembaruan pada satu sesi update wajib dikirimkan sekaligus dalam satu folder Google Drive (tidak dicicil terpisah-pisah).</li>
+                            <li>• <strong>Gratis 1x Update Konten Pertama:</strong> Berlaku kapan saja di tahun pertama
+                                setelah website resmi dirilis.</li>
+                            <li>• <strong>Layanan Update Berkala (Rp25.000 / sesi):</strong> Direkomendasikan setiap 3
+                                bulan sekali untuk memperbarui galeri foto kegiatan (maks. 10 foto), daftar prestasi
+                                terbaru, teks informasi, atau tautan pendaftaran tanpa mengubah desain halaman.</li>
+                            <li>• <strong>Sistem Single-Batch:</strong> Seluruh materi pembaruan pada satu sesi update
+                                wajib dikirimkan sekaligus dalam satu folder Google Drive (tidak dicicil
+                                terpisah-pisah).</li>
                         </ul>
                     </div>
                 </div>
@@ -1043,7 +1294,8 @@
     <footer class="border-t border-slate-200 dark:border-slate-800/80 py-12 px-4 sm:px-6 lg:px-8 mt-10">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-500 flex items-center justify-center text-white font-bold">
+                <div
+                    class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-500 flex items-center justify-center text-white font-bold">
                     <i data-lucide="code-2" class="w-5 h-5"></i>
                 </div>
                 <div>
@@ -1055,7 +1307,7 @@
                 <a href="#solusi" class="hover:text-brand-500">Solusi</a>
                 <a href="#paket" class="hover:text-brand-500">Paket Statis (459k)</a>
                 <a href="#paket" class="hover:text-brand-500">Paket Dinamis (899k)</a>
-                <a href="#kalkulator" class="hover:text-brand-500">Simulasi Proposal</a>
+                <a href="#kalkulator" class="hover:text-brand-500">Simulasi Harga</a>
                 <a href="#ketentuan" class="hover:text-brand-500">Ketentuan Layanan</a>
             </div>
             <p class="text-xs text-slate-400">© 2026 KarsaWeb Studio. Dibangun untuk kemajuan pelajar Indonesia.</p>
@@ -1069,7 +1321,7 @@
 
         // State Kalkulator
         let currentPackage = 'dinamis'; // 'statis' or 'dinamis'
-        let lastProposalText = '';
+        let lastHargaText = '';
 
         // 1. Dark / Light Theme Toggle
         const themeToggleBtn = document.getElementById('themeToggle');
@@ -1152,7 +1404,7 @@
             if (pkg === 'statis') {
                 btnStatis.className = 'text-left p-4 rounded-2xl border-2 border-sky-500 bg-sky-500/10 transition-all shadow-md';
                 btnDinamis.className = 'text-left p-4 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 opacity-75 hover:opacity-100 transition-all';
-                
+
                 // Disable Kotak Aspirasi on Statis
                 chkAspirasi.checked = false;
                 chkAspirasi.disabled = true;
@@ -1172,10 +1424,10 @@
             calculatePricing();
         }
 
-        // 8. Calculate Pricing & Build Proposal Text
+        // 8. Calculate Pricing & Build Harga Text
         function calculatePricing() {
             const orgName = document.getElementById('orgNameInput').value.trim();
-            document.getElementById('summaryOrgTitle').textContent = orgName ? orgName : 'Draf Proposal Website';
+            document.getElementById('summaryOrgTitle').textContent = orgName ? orgName : 'Draf Harga Website';
 
             const isStatis = currentPackage === 'statis';
             const basePrice = isStatis ? 459000 : 899000;
@@ -1242,20 +1494,20 @@
             `).join('');
 
             // Update Totals UI
-            document.getElementById('summaryMarketPrice').textContent = formatRp(marketPrice + ( total - basePrice ));
+            document.getElementById('summaryMarketPrice').textContent = formatRp(marketPrice + (total - basePrice));
             document.getElementById('summaryTotal').textContent = formatRp(total);
             document.getElementById('summaryDP').textContent = formatRp(dp);
             document.getElementById('summaryPelunasan').textContent = formatRp(pelunasan);
             document.getElementById('summaryRenewal').textContent = `${formatRp(totalRenewal)} / tahun (Domain ${domainLabel})`;
 
-            // Build Formatted Text for Proposal / WhatsApp
+            // Build Formatted Text for Harga / WhatsApp
             const orgHeader = orgName ? `untuk *${orgName}*` : 'Organisasi Sekolah';
             let textLines = [
                 `*RINCIAN ANGGARAN PEMBUATAN WEBSITE RESMI*`,
                 `Disusun ${orgHeader} bersama *KarsaWeb Studio*`,
-                `----------------------------------------`,
+                "\n",
                 ...items.map(i => `• ${i.name}: *${formatRp(i.price)}*`),
-                `----------------------------------------`,
+                "\n",
                 `*TOTAL BIAYA TAHUN PERTAMA: ${formatRp(total)}*`,
                 `• Pembayaran DP Awal (50%): ${formatRp(dp)}`,
                 `• Pelunasan Saat Web Rilis (50%): ${formatRp(pelunasan)}`,
@@ -1267,30 +1519,30 @@
                 `• Estimasi Pengerjaan: ${isStatis ? '3-5 hari kerja' : '7-14 hari kerja'} (Maks. 3x revisi minor).`,
                 `• Biaya Perpanjangan Tahun ke-2 dst: ${formatRp(totalRenewal)}/tahun.`
             ];
-            lastProposalText = textLines.join('\n');
+            lastHargaText = textLines.join('\n');
         }
 
-        // 9. Copy Proposal Text to Clipboard (Compatible with iFrame restrictions)
-        function copyProposalText() {
+        // 9. Copy Harga Text to Clipboard (Compatible with iFrame restrictions)
+        function copyHargaText() {
             const textarea = document.createElement('textarea');
-            textarea.value = lastProposalText;
+            textarea.value = lastHargaText;
             textarea.style.position = 'fixed';
             textarea.style.opacity = '0';
             document.body.appendChild(textarea);
             textarea.select();
             try {
                 document.execCommand('copy');
-                showToast('Rincian Proposal Disalin!', 'Teks anggaran sudah siap di-paste ke grup WhatsApp BPH atau dokumen proposal kesiswaan.');
+                showToast('Rincian Harga Disalin!', 'Teks anggaran sudah siap di-paste ke grup WhatsApp BPH atau dokumen Harga kesiswaan.');
             } catch (err) {
                 showToast('Gagal Menyalin', 'Silakan gunakan tombol WhatsApp di atas.');
             }
             document.body.removeChild(textarea);
         }
 
-        // 10. Open WhatsApp with Pre-filled Proposal
+        // 10. Open WhatsApp with Pre-filled Harga
         function sendToWhatsApp() {
             const intro = "Halo Tim KarsaWeb Studio! Kami tertarik untuk konsultasi pembuatan website organisasi sekolah dengan simulasi paket berikut:\n\n";
-            const encoded = encodeURIComponent(intro + lastProposalText);
+            const encoded = encodeURIComponent(intro + lastHargaText);
             window.open(`https://wa.me/?text=${encoded}`, '_blank');
         }
 
@@ -1300,4 +1552,5 @@
         });
     </script>
 </body>
+
 </html>
